@@ -19,22 +19,6 @@ router.get("/", function (req, res, next) {
 //   // Handle POST request for /mobs
 // });
 
-const mobArray = [
-  {
-    id: 1234,
-    members: [
-      {
-        memID: 4321,
-      },
-    ],
-  },
-];
-
-router.get("/mobs", function (req, res) {
-  console.log(mobArray);
-  res.send(mobArray);
-});
-
 // `GET YOUR_BACKEND_URL/mobs/:mobId` # get a particular mob
 // app.get('/api/v1/tours/:id', (req, res) => {
 //   console.log(req.params);
@@ -44,7 +28,3 @@ router.get("/mobs", function (req, res) {
 //   const tour = tours.find((el) => el.id === id); // this create an element, where comparison is true; we can receive only one single tour;
 
 module.exports = router;
-
-// `GET YOUR_BACKEND_URL/mobs/` # get all mobs
-// `POST YOUR_BACKEND_URL/mobs/` # add a new mob
-// `GET YOUR_BACKEND_URL/mobs/:mobId` # get a particular mob
