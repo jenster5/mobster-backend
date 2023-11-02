@@ -5,21 +5,25 @@ In today's lab, you're going to work on a real-world application that will fly o
 ## Tasks
 
 ### Create & Deploy the Frontend App
+
 Create a [ViteJS](https://vitejs.dev/guide/) Vanilla TypeScript app using the TypeScript template. Once done, commit and push the project to a GitHub repository as it is. You can use one of the mob's member's GitHub account to do it. Once the code has been pushed, deploy the app to the GitHub pages using the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package.
-Make sure the frontend app works and you're able to see the output. 
+Make sure the frontend app works and you're able to see the output.
 
 ### Create & Deploy the Backend App
-For the backend, you will create a basic ExpressJS app using the [Express Generator]((https://expressjs.com/en/starter/generator.html)). Without coding any further logic, push your code to a newly created GitHub repository. You can use one of the mob's member's GitHub account to do it. You will now deploy the app to the [Railway.app](https://railway.app/) platform via linking your GitHub project.
+
+For the backend, you will create a basic ExpressJS app using the [Express Generator](<(https://expressjs.com/en/starter/generator.html)>). Without coding any further logic, push your code to a newly created GitHub repository. You can use one of the mob's member's GitHub account to do it. You will now deploy the app to the [Railway.app](https://railway.app/) platform via linking your GitHub project.
 If railway doesn't work, you can look into [Vercel](https://vercel.com/guides/using-express-with-vercel) to deploy your project or any other hosting provider.
 
 ### Implement the Mobs Routes
 
 In your backend app, create a new set of routes against the `mobs` URL and implement the CRUD routes for them. Check that your API routes work using Postman or Insomnia. A new mob should take the following body as input:
+
 ```json
 {
-  "name" : "MOB_NAME"
+  "name": "MOB_NAME"
 }
 ```
+
 A unique ID for each mob should be generated.
 
 ### Implement the Members Routes
@@ -27,9 +31,10 @@ A unique ID for each mob should be generated.
 Create another set of routes against the `members` URL. Implement CRUD operatios for this as well. A new member should be created using the following body:
 
 A new mob should take the following body as input:
+
 ```json
 {
-  "name" : "MEMBER_NAME",
+  "name": "MEMBER_NAME",
   "mobId": "MOB_ID"
 }
 ```
@@ -44,12 +49,14 @@ This is what your frontend will request using the mob ID. It should be able to g
 
 Your frontend should show a bunch of cards showing the mob name and the mob members as follows. This is the minimum requirement:
 
-![Vite](./mobster-fe.png)  <!-- {style="width:800px;padding:10px;" class="plain fade-in"} -->
+![Vite](./mobster-fe.png) <!-- {style="width:800px;padding:10px;" class="plain fade-in"} -->
 
- Feel free to improvise the design and the information a member could have. Think about adding their github/linkedin links etc. 
- 
+Feel free to improvise the design and the information a member could have. Think about adding their github/linkedin links etc.
+
 #### Hint: Example routes:
+
 You can see the following routes to get an idea about how your routes should look like:
+
 ```bash
 `GET YOUR_BACKEND_URL/mobs/` # get all mobs
 `POST YOUR_BACKEND_URL/mobs/` # add a new mob
@@ -58,7 +65,6 @@ You can see the following routes to get an idea about how your routes should loo
 `POST YOUR_BACKEND_URL/mobs/:mobId/members` # add a new mob-member to the mob
 `GET YOUR_BACKEND_URL/mobs/:mobId/members/:memberId` # get a particular mob-member of a particular mob
 ```
-
 
 ### Final Deployment
 
@@ -72,4 +78,11 @@ Please add linting to both the (frontend and backend) projects and add the scrip
 
 Add the names, github links, and linkedin links of all your mob members in the Readme of both projects. You can use [this template](https://github.com/othneildrew/Best-README-Template) for it.
 
-Good Luck! 
+Good Luck!
+
+1.Create a new set of routes: Create a new set of routes in your Node.js, Express, and TypeScript application to handle requests to the mobs URL. You can use the express.Router() method to create a new router object and define your routes on it.
+2.Implement the CRUD routes: Implement the CRUD (Create, Read, Update, Delete) routes for your mobs URL. You can use the following HTTP methods to implement each route:
+3.Create: Use the HTTP POST method to create a new mob. You can use the body-parser middleware to parse the request body and extract the name property from it. You can then generate a unique ID for the mob using a library like uuid or by using a counter variable.
+4.Read: Use the HTTP GET method to retrieve a list of all mobs or a single mob by ID.
+5.Update: Use the HTTP PUT or PATCH method to update an existing mob by ID. You can use the body-parser middleware to parse the request body and extract the name property from it.
+6.Delete: Use the HTTP DELETE method to delete an existing mob by ID.
